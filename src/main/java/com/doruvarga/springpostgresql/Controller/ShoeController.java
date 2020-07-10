@@ -23,13 +23,12 @@ public class ShoeController {
     @GetMapping("/shoes")
     public List<Shoe> getAllTheShoes() {
 
-        //get characters
-        // o lista de tip Characters(model), adica entitatile din tabel
+        
         return this.shoeRepository.findAll();
 
     }
 
-    //get shoe by id
+  
     @GetMapping("/shoes/{id}")
     public ResponseEntity<Shoe> getShoeById(@PathVariable(value = "id") int shoesId) throws ExceptieMissingElm {
 
@@ -38,17 +37,15 @@ public class ShoeController {
         return ResponseEntity.ok().body(shoe);
     }
 
-    //create a shoe
+   
     @PostMapping("shoes")
-    //pentru metoda post(create) asta ii anotarea
-    //create characters
-    //@RequestBody, leaga request-ul pt Shoe de body-ul obiectului(continut)
+ 
     public Shoe ceateShoe(@RequestBody Shoe shoes) {
 
         return shoeRepository.save(shoes);
     }
 
-    //update shoe (put method)
+ 
     @PutMapping("shoes/{id}")
     public ResponseEntity<Shoe> updateShoes(@PathVariable(value = "id") int shoesId,
                                             @Valid @RequestBody Map<String, String> shesDetails)
