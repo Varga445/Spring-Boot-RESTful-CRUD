@@ -4,7 +4,7 @@ package com.doruvarga.springpostgresql.Model;
 import javax.persistence.*;
 import java.util.List;
 
-//asa configurezi o entitate jpa
+
 @Entity
 @Table(name = "Outfits")
 public class Outfit {
@@ -15,12 +15,6 @@ public class Outfit {
 
     @Column(name = "tshirt_name")
     private String tshirt;
-
-//    @Column(name = "outfit_id")
-//    private int outfitId;
-
-//    @OneToMany(mappedBy = "outfit")
-//    private List<Shoe>shoes;
 
     public Outfit(String tshirt) {
         this.tshirt = tshirt;
