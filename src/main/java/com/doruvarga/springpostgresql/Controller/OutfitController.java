@@ -23,13 +23,11 @@ public class OutfitController {
     @GetMapping("/Outfits")
     public List<Outfit> getAllTheOutfits() {
 
-        //get outfits
-        // o lista de tip outfits(model), adica entitatile din tabel
         return this.outfitRepository.findAll();
 
     }
 
-    //get outfits by id
+  
     @GetMapping("/Outfits/{id}")
     public ResponseEntity<Outfit> getOutfitsById(@PathVariable(value = "id") int outfitsId) throws ExceptieMissingElm {
 
@@ -39,17 +37,15 @@ public class OutfitController {
     }
 
 
-    //create a shoe
+    
     @PostMapping("Outfits")
-    //pentru metoda post(create) asta ii anotarea
-    //create characters
-    //@RequestBody, leaga request-ul pt Characters de body-ul obiectului(continut)
+    
     public Outfit createOutfits(@RequestBody Outfit outfits) {
 
         return outfitRepository.save(outfits);
     }
 
-    //update shoe (put method)
+
     @PutMapping("/Outfits/{id}")
     public ResponseEntity<Outfit> updateOutfits(@PathVariable(value = "id") int outfitId,
                                             @Valid @RequestBody Map<String, String> outfitDetails)
