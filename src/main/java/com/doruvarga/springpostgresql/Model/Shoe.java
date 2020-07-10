@@ -21,7 +21,7 @@ public class Shoe {
 
     @Column(name = "brand_name")
     private String brandName;
-    //asa creezi in tabel o coloana denumita brand_name
+ 
 
 
     @Column(name = "type_name")
